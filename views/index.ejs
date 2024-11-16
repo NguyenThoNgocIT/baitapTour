@@ -1,0 +1,65 @@
+<% layout("layout") -%>
+<div class="p-4 bg-white shadow rounded">
+  <h2 class="text-xl font-semibold mb-4">Booking List</h2>
+  <form action="/bookings" method="get" class="mb-4">
+    <input
+      type="text"
+      name="q"
+      placeholder="Search by name or status"
+      value="<%= q || '' %>"
+      <!--
+      Sử
+      dụng
+      giá
+      trị
+      q,
+      nếu
+      không
+      có
+      thì
+      là
+      chuỗi
+      rỗng
+      --
+    />
+    class="border rounded px-2 py-1" />
+    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">
+      Search
+    </button>
+  </form>
+
+  <table class="table-auto w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border p-2">Customer Name</th>
+        <th class="border p-2">Date</th>
+        <th class="border p-2">Time</th>
+        <th class="border p-2">Status</th>
+        <th class="border p-2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% bookings.forEach((booking) => { %>
+      <tr class="hover:bg-gray-50">
+        <td class="border p-2"><%= booking.customerName %></td>
+        <td class="border p-2"><%= booking.date %></td>
+        <td class="border p-2"><%= booking.time %></td>
+        <td class="border p-2"><%= booking.status || "Active" %></td>
+        <td class="border p-2 text-center">
+          <a
+            href="/bookings/<%= booking._id %>/edit"
+            class="text-blue-500 hover:underline"
+            >Edit</a
+          >
+          |
+          <a
+            href="/bookings/<%= booking._id %>/delete"
+            class="text-red-500 hover:underline"
+            >Delete</a
+          >
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

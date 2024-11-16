@@ -1,0 +1,46 @@
+<% layout("layout") -%>
+<div class="p-4 bg-white shadow rounded">
+  <h2 class="text-xl font-semibold mb-4">Edit Booking</h2>
+  <form action="/bookings/<%= booking._id %>" method="post" class="space-y-4">
+    <input type="hidden" name="_method" value="PUT" />
+    <div>
+      <label for="customerName" class="block text-sm font-medium"
+        >Customer Name</label
+      >
+      <input
+        type="text"
+        name="customerName"
+        id="customerName"
+        value="<%= booking.customerName %>"
+        class="border rounded w-full px-2 py-1"
+        required
+      />  
+      
+    </div>
+    <div>
+      <label for="date" class="block text-sm font-medium">Date</label>
+      <input
+        type="date"
+        name="date"
+        id="date"
+        value="<%= booking.date %>"
+        class="border rounded w-full px-2 py-1"
+        required
+      />
+    </div>
+    <div>
+      <label for="time" class="block text-sm font-medium">Time</label>
+      <input
+        type="time"
+        name="time"
+        id="time"
+        value="<%= booking.time %>"
+        class="border rounded w-full px-2 py-1"
+        required
+      />
+    </div>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+      Update Booking
+    </button>
+  </form>
+</div>

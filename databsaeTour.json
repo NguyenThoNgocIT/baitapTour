@@ -1,0 +1,33 @@
+[
+    {
+      "customerName": "Nguyen Van A",
+      "date": "2024-11-17",
+      "time": "10:00",
+      "status": "Pending"
+    },
+    {
+      "customerName": "Tran Thi B",
+      "date": "2024-11-18",
+      "time": "14:30",
+      "status": "Confirmed"
+    },
+    {
+      "customerName": "Le Van C",
+      "date": "2024-11-19",
+      "time": "09:15",
+      "status": "Cancelled"
+    },
+    {
+      "customerName": "Pham Thi D",
+      "date": "2024-11-20",
+      "time": "11:00",
+      "status": "Pending"
+    },
+    {
+      "customerName": "Hoang Van E",
+      "date": "2024-11-21",
+      "time": "13:45",
+      "status": "Confirmed"
+    }
+  ]
+  
